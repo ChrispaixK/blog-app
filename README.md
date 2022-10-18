@@ -1,40 +1,24 @@
-![](https://img.shields.io/badge/Microverse-blueviolet)
+# README
 
-# Blog App
+This README would normally document whatever steps are necessary to get the
+application up and running.
 
-> Description the project.
+Things you may want to cover:
 
+* Ruby version
 
-## Built With
+* System dependencies
 
-- Ruby
+* Configuration
 
+* Database creation
 
-## Authors
+* Database initialization
 
-👤 **Chrispaix KAZE**
+* How to run the test suite
 
-- GitHub: [@ChrispaixK](https://github.com/ChrispaixK)
-- Twitter: [@ChrispaixK](https://twitter.com/ChrispaixK)
-- LinkedIn: [Chrispaix KAZE](https://www.linkedin.com/in/chrispaix-kaze-70445a175/)
+* Services (job queues, cache servers, search engines, etc.)
 
+* Deployment instructions
 
-## 🤝 Contributing
-
-Contributions, issues, and feature requests are welcome!
-
-Feel free to check the [issues page](https://github.com/ChrispaixK/blog-app/issues).
-
-## Show your support
-
-Give a ⭐️ if you like this project!
-
-## Acknowledgments
-
-- MicroverseInc
-
-## 📝 License
-
-This project is [MIT](./LICENSE) licensed.
-
-_NOTE: we recommend using the [MIT license](https://choosealicense.com/licenses/mit/) - you can set it up quickly by [using templates available on GitHub](https://docs.github.com/en/communities/setting-up-your-project-for-healthy-contributions/adding-a-license-to-a-repository). You can also use [any other license](https://choosealicense.com/licenses/) if you wish._
+* ...
