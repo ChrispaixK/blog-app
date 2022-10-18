@@ -1,24 +1,72 @@
-# README
+# Blog-app
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+> The Blog app will is a classic example of a blog website. I will create a fully functional website that will show the list of posts and empower readers to interact with them by adding comments and liking posts.
 
-Things you may want to cover:
+## Built With
 
-* Ruby version
+- Ruby
+- Rubocop
+- Ruby on Rails
 
-* System dependencies
+## Authors
 
-* Configuration
+👤 **Chrispaix Kaze**
 
-* Database creation
+- GitHub: [@Chrispaix Kaze](https://github.com/ChrispaixK)
+- Twitter: [@Chrispaix Kaze](https://twitter.com/ChrispaixK)
+- LinkedIn: [Chrispaix Kaze](https://www.linkedin.com/in/chrispaix-kaze-70445a175/)
 
-* Database initialization
+## Getting Started
 
-* How to run the test suite
+To get a local copy up and running follow these simple example steps.
 
-* Services (job queues, cache servers, search engines, etc.)
+- Clone this repository
+- Change to the project directory by entering : <br>
+  `cd blog-app` in the terminal.
 
-* Deployment instructions
+### Setup
 
-* ...
+You can clone this repository or simply download the files as a .zip
+If you want to set up a personal repository based on this one, you can as well fork it.
+
+### Run test for linter:
+
+```
+rubocop -A
+```
+
+### Start the app:
+
+```
+ruby main.rb
+```
+
+### Install RSpec
+
+```
+gem install rspec
+```
+
+### Run tests:
+
+```
+rspec spec spec/[FILE NAME FROM THE SPEC FOLDER]
+```
+
+## 🤝 Contributing
+
+Contributions, issues, and feature requests are welcome!
+
+Feel free to check the [issues page](https://github.com/ChrispaixK/blog-app/issues).
+
+## Show your support
+
+Give a ⭐️ if you like this project!
+
+## Acknowledgments
+
+- Microverse
+
+## 📝 License
+
+This project is [MIT](./MIT.md) licensed.
