@@ -1,62 +1,65 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# Project Name
+# Blog-app
 
-> Description the project.
-
+> The Blog app will is a classic example of a blog website. I will create a fully functional website that will show the list of posts and empower readers to interact with them by adding comments and liking posts.
 
 ## Built With
 
-- Major languages
-- Frameworks
-- Technologies used
-
-## Live Demo (if available)
-
-[Live Demo Link](https://livedemo.com)
-
-
-## Getting Started
-
-**This is an example of how you may give instructions on setting up your project locally.**
-**Modify this file to match your project, remove sections that don't apply. For example: delete the testing section if the currect project doesn't require testing.**
-
-
-To get a local copy up and running follow these simple example steps.
-
-### Prerequisites
-
-### Setup
-
-### Install
-
-### Usage
-
-### Run tests
-
-### Deployment
-
-
+- Ruby
+- Rubocop
+- Ruby on Rails
 
 ## Authors
 
-👤 **Author1**
+👤 **Chrispaix Kaze**
 
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
+- GitHub: [@Chrispaix Kaze](https://github.com/ChrispaixK)
+- Twitter: [@Chrispaix Kaze](https://twitter.com/ChrispaixK)
+- LinkedIn: [Chrispaix Kaze](https://www.linkedin.com/in/chrispaix-kaze-70445a175/)
 
-👤 **Author2**
+## Getting Started
 
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
+To get a local copy up and running follow these simple example steps.
+
+- Clone this repository
+- Change to the project directory by entering : <br>
+  `cd blog-app` in the terminal.
+
+### Setup
+
+You can clone this repository or simply download the files as a .zip
+If you want to set up a personal repository based on this one, you can as well fork it.
+
+### Run test for linter:
+
+```
+rubocop -A
+```
+
+### Start the app:
+
+```
+ruby main.rb
+```
+
+### Install RSpec
+
+```
+gem install rspec
+```
+
+### Run tests:
+
+```
+rspec spec spec/[FILE NAME FROM THE SPEC FOLDER]
+```
 
 ## 🤝 Contributing
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](../../issues/).
+Feel free to check the [issues page](https://github.com/ChrispaixK/blog-app/issues).
 
 ## Show your support
 
@@ -64,12 +67,8 @@ Give a ⭐️ if you like this project!
 
 ## Acknowledgments
 
-- Hat tip to anyone whose code was used
-- Inspiration
-- etc
+- Microverse
 
 ## 📝 License
 
-This project is [MIT](./LICENSE) licensed.
-
-_NOTE: we recommend using the [MIT license](https://choosealicense.com/licenses/mit/) - you can set it up quickly by [using templates available on GitHub](https://docs.github.com/en/communities/setting-up-your-project-for-healthy-contributions/adding-a-license-to-a-repository). You can also use [any other license](https://choosealicense.com/licenses/) if you wish._
+This project is [MIT](./MIT.md) licensed.
