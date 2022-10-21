@@ -11,12 +11,11 @@ RSpec.describe Comment, type: :model do
     likes_counter: 0, user_id: user.id
   )
 
-  comment = Comment.create(post:, user: user)
-  
+  comment = Comment.create(post:, user:)
+
   comment.update_comments_counter
 
-    it ' Check if it increment comments_counter' do
-      expect(Post.find(post.id).comments_counter).eql?(post.comments_counter + 1)
-    end
-
+  it ' Check if it increment comments_counter' do
+    expect(Post.find(post.id).comments_counter).eql?(post.comments_counter + 1)
+  end
 end
