@@ -3139,3 +3139,121 @@ FOREIGN KEY ("user_id")
   [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "photo", "bio", "posts_counter", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Stephen Seber"], ["photo", "https://www.pexels.com/photo/grayscale-photo-of-laughing-woman-holding-her-hat-1054251/"], ["bio", "Hey there, I am Stephen Seber."], ["posts_counter", 0], ["created_at", "2022-10-21 05:47:36.523091"], ["updated_at", "2022-10-21 05:47:36.523091"]]
   [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
   [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (67.8ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (37.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (77.8ms)[0m  [1m[32mINSERT INTO "users" ("name", "photo", "bio", "posts_counter", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Stephen Seber"], ["photo", "https://www.pexels.com/photo/grayscale-photo-of-laughing-woman-holding-her-hat-1054251/"], ["bio", "Hey there, I am Stephen Seber."], ["posts_counter", 0], ["created_at", "2022-10-24 13:32:01.719288"], ["updated_at", "2022-10-24 13:32:01.719288"]]
+  [1m[36mTRANSACTION (156.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mPost Create (71.8ms)[0m  [1m[32mINSERT INTO "posts" ("title", "text", "comments_counter", "likes_counter", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "Photographer"], ["text", "Hey there, I am Stephen Seber, a professional photographer"], ["comments_counter", 0], ["likes_counter", 0], ["created_at", "2022-10-24 13:32:02.035041"], ["updated_at", "2022-10-24 13:32:02.035041"], ["user_id", 9]]
+  [1m[36mUser Update All (0.5ms)[0m  [1m[33mUPDATE "users" SET "posts_counter" = COALESCE("posts_counter", 0) + $1 WHERE "users"."id" = $2[0m  [["posts_counter", 1], ["id", 9]]
+  [1m[36mTRANSACTION (40.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mComment Create (57.5ms)[0m  [1m[32mINSERT INTO "comments" ("text", "created_at", "updated_at", "user_id", "post_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["text", nil], ["created_at", "2022-10-24 13:32:02.157329"], ["updated_at", "2022-10-24 13:32:02.157329"], ["user_id", 9], ["post_id", 11]]
+  [1m[36mPost Update All (0.4ms)[0m  [1m[33mUPDATE "posts" SET "comments_counter" = COALESCE("comments_counter", 0) + $1 WHERE "posts"."id" = $2[0m  [["comments_counter", 1], ["id", 11]]
+  [1m[36mTRANSACTION (33.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mPost Update All (10.3ms)[0m  [1m[33mUPDATE "posts" SET "comments_counter" = COALESCE("comments_counter", 0) + $1 WHERE "posts"."id" = $2[0m  [["comments_counter", 1], ["id", 11]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "photo", "bio", "posts_counter", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Stephen Seber"], ["photo", "https://www.pexels.com/photo/grayscale-photo-of-laughing-woman-holding-her-hat-1054251/"], ["bio", "Hey there, I am Stephen Seber."], ["posts_counter", 0], ["created_at", "2022-10-24 13:32:02.294519"], ["updated_at", "2022-10-24 13:32:02.294519"]]
+  [1m[36mTRANSACTION (159.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mPost Create (0.4ms)[0m  [1m[32mINSERT INTO "posts" ("title", "text", "comments_counter", "likes_counter", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "Stephen post"], ["text", "Hey there, I am Stephen Seber."], ["comments_counter", 0], ["likes_counter", 0], ["created_at", "2022-10-24 13:32:02.457709"], ["updated_at", "2022-10-24 13:32:02.457709"], ["user_id", 10]]
+  [1m[36mUser Update All (0.4ms)[0m  [1m[33mUPDATE "users" SET "posts_counter" = COALESCE("posts_counter", 0) + $1 WHERE "users"."id" = $2[0m  [["posts_counter", 1], ["id", 10]]
+  [1m[36mTRANSACTION (12.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mLike Create (71.0ms)[0m  [1m[32mINSERT INTO "likes" ("created_at", "updated_at", "user_id", "post_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2022-10-24 13:32:02.478162"], ["updated_at", "2022-10-24 13:32:02.478162"], ["user_id", 10], ["post_id", 12]]
+  [1m[36mPost Update All (0.4ms)[0m  [1m[33mUPDATE "posts" SET "likes_counter" = COALESCE("likes_counter", 0) + $1 WHERE "posts"."id" = $2[0m  [["likes_counter", 1], ["id", 12]]
+  [1m[36mTRANSACTION (32.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mPost Update All (10.5ms)[0m  [1m[33mUPDATE "posts" SET "likes_counter" = COALESCE("likes_counter", 0) + $1 WHERE "posts"."id" = $2[0m  [["likes_counter", 1], ["id", 12]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "photo", "bio", "posts_counter", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Stephen Seber"], ["photo", "https://www.pexels.com/photo/grayscale-photo-of-laughing-woman-holding-her-hat-1054251/"], ["bio", "Hey there, I am Stephen Seber."], ["posts_counter", 0], ["created_at", "2022-10-24 13:32:02.764683"], ["updated_at", "2022-10-24 13:32:02.764683"]]
+  [1m[36mTRANSACTION (28.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mPost Create (0.5ms)[0m  [1m[32mINSERT INTO "posts" ("title", "text", "comments_counter", "likes_counter", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "Description"], ["text", "I am a a passionate photographer"], ["comments_counter", 1], ["likes_counter", 0], ["created_at", "2022-10-24 13:32:02.797981"], ["updated_at", "2022-10-24 13:32:02.797981"], ["user_id", 11]]
+  [1m[36mUser Update All (0.3ms)[0m  [1m[33mUPDATE "users" SET "posts_counter" = COALESCE("posts_counter", 0) + $1 WHERE "users"."id" = $2[0m  [["posts_counter", 1], ["id", 11]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mPost Create (0.6ms)[0m  [1m[32mINSERT INTO "posts" ("title", "text", "comments_counter", "likes_counter", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "Description"], ["text", "I am a a passionate photographer"], ["comments_counter", 1], ["likes_counter", 0], ["created_at", "2022-10-24 13:32:02.804480"], ["updated_at", "2022-10-24 13:32:02.804480"], ["user_id", 11]]
+  [1m[36mUser Update All (0.4ms)[0m  [1m[33mUPDATE "users" SET "posts_counter" = COALESCE("posts_counter", 0) + $1 WHERE "users"."id" = $2[0m  [["posts_counter", 1], ["id", 11]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mPost Create (0.6ms)[0m  [1m[32mINSERT INTO "posts" ("title", "text", "comments_counter", "likes_counter", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "Description"], ["text", "I am a a passionate photographer"], ["comments_counter", 1], ["likes_counter", 0], ["created_at", "2022-10-24 13:32:02.811605"], ["updated_at", "2022-10-24 13:32:02.811605"], ["user_id", 11]]
+  [1m[36mUser Update All (0.5ms)[0m  [1m[33mUPDATE "users" SET "posts_counter" = COALESCE("posts_counter", 0) + $1 WHERE "users"."id" = $2[0m  [["posts_counter", 1], ["id", 11]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mPost Create (0.6ms)[0m  [1m[32mINSERT INTO "posts" ("title", "text", "comments_counter", "likes_counter", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "Description"], ["text", "I am a a passionate photographer"], ["comments_counter", 1], ["likes_counter", 0], ["created_at", "2022-10-24 13:32:02.820439"], ["updated_at", "2022-10-24 13:32:02.820439"], ["user_id", 11]]
+  [1m[36mUser Update All (0.5ms)[0m  [1m[33mUPDATE "users" SET "posts_counter" = COALESCE("posts_counter", 0) + $1 WHERE "users"."id" = $2[0m  [["posts_counter", 1], ["id", 11]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mPost Create (0.5ms)[0m  [1m[32mINSERT INTO "posts" ("title", "text", "comments_counter", "likes_counter", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "Description"], ["text", "I am a a passionate photographer"], ["comments_counter", 1], ["likes_counter", 0], ["created_at", "2022-10-24 13:32:02.828822"], ["updated_at", "2022-10-24 13:32:02.828822"], ["user_id", 11]]
+  [1m[36mUser Update All (0.4ms)[0m  [1m[33mUPDATE "users" SET "posts_counter" = COALESCE("posts_counter", 0) + $1 WHERE "users"."id" = $2[0m  [["posts_counter", 1], ["id", 11]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mPost Create (0.5ms)[0m  [1m[32mINSERT INTO "posts" ("title", "text", "comments_counter", "likes_counter", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "Description"], ["text", "I am a a passionate photographer"], ["comments_counter", 1], ["likes_counter", 0], ["created_at", "2022-10-24 13:32:02.836786"], ["updated_at", "2022-10-24 13:32:02.836786"], ["user_id", 11]]
+  [1m[36mUser Update All (0.4ms)[0m  [1m[33mUPDATE "users" SET "posts_counter" = COALESCE("posts_counter", 0) + $1 WHERE "users"."id" = $2[0m  [["posts_counter", 1], ["id", 11]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mPost Create (0.4ms)[0m  [1m[32mINSERT INTO "posts" ("title", "text", "comments_counter", "likes_counter", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "Description"], ["text", "I am a a passionate photographer"], ["comments_counter", 1], ["likes_counter", 0], ["created_at", "2022-10-24 13:32:02.845288"], ["updated_at", "2022-10-24 13:32:02.845288"], ["user_id", 11]]
+  [1m[36mUser Update All (0.5ms)[0m  [1m[33mUPDATE "users" SET "posts_counter" = COALESCE("posts_counter", 0) + $1 WHERE "users"."id" = $2[0m  [["posts_counter", 1], ["id", 11]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mPost Create (0.5ms)[0m  [1m[32mINSERT INTO "posts" ("title", "text", "comments_counter", "likes_counter", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "Description"], ["text", "I am a a passionate photographer"], ["comments_counter", 1], ["likes_counter", 0], ["created_at", "2022-10-24 13:32:02.853270"], ["updated_at", "2022-10-24 13:32:02.853270"], ["user_id", 11]]
+  [1m[36mUser Update All (0.7ms)[0m  [1m[33mUPDATE "users" SET "posts_counter" = COALESCE("posts_counter", 0) + $1 WHERE "users"."id" = $2[0m  [["posts_counter", 1], ["id", 11]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "photo", "bio", "posts_counter", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Stephen Seber"], ["photo", "https://www.pexels.com/photo/grayscale-photo-of-laughing-woman-holding-her-hat-1054251/"], ["bio", "Hey there, I am Stephen Seber."], ["posts_counter", 0], ["created_at", "2022-10-24 13:32:02.860557"], ["updated_at", "2022-10-24 13:32:02.860557"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "photo", "bio", "posts_counter", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Stephen Seber"], ["photo", "https://www.pexels.com/photo/grayscale-photo-of-laughing-woman-holding-her-hat-1054251/"], ["bio", "Hey there, I am Stephen Seber."], ["posts_counter", 0], ["created_at", "2022-10-24 13:32:02.865384"], ["updated_at", "2022-10-24 13:32:02.865384"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "photo", "bio", "posts_counter", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Stephen Seber"], ["photo", "https://www.pexels.com/photo/grayscale-photo-of-laughing-woman-holding-her-hat-1054251/"], ["bio", "Hey there, I am Stephen Seber."], ["posts_counter", 0], ["created_at", "2022-10-24 13:32:02.870122"], ["updated_at", "2022-10-24 13:32:02.870122"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "photo", "bio", "posts_counter", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Stephen Seber"], ["photo", "https://www.pexels.com/photo/grayscale-photo-of-laughing-woman-holding-her-hat-1054251/"], ["bio", "Hey there, I am Stephen Seber."], ["posts_counter", 0], ["created_at", "2022-10-24 13:32:02.875899"], ["updated_at", "2022-10-24 13:32:02.875899"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "photo", "bio", "posts_counter", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Stephen Seber"], ["photo", "https://www.pexels.com/photo/grayscale-photo-of-laughing-woman-holding-her-hat-1054251/"], ["bio", "Hey there, I am Stephen Seber."], ["posts_counter", 0], ["created_at", "2022-10-24 13:32:02.880606"], ["updated_at", "2022-10-24 13:32:02.880606"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
