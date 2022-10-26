@@ -1,1 +1,9 @@
-<h1>dummy comment</h1>
+<li>
+ <h3> <%=post.title%> </h3>
+ <p> <%= post.text%></p>
+ <strong>
+  <p class="stats">
+   Comments: <%= post.comments_counter or 0%>,
+   Likes: <%= post.likes_counter or 0 %> </p>
+ </strong>
+</li>
