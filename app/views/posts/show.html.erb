@@ -1,1 +1,15 @@
-<h2>Here is a list of posts for a given user</h2>
+<h2>Specific post and its comment</h2>
+<div class="posts">
+  <div class="post">
+  <div class='specific-post-title'>
+    <h3><%=@posts.title%> | by <%=@posts.user.name%></h3>
+     <p class="stats-comment"> Comments: <%= @posts.comments_counter or 0 %> | Likes: <%= @posts.likes_counter or 0 %> </p>
+     </div>
+    <p>Post : <%= @posts.text%> </p>
+  </div>
+  <div class="comment">
+    <% @posts.comments.each do |comment| %>
+      <p> <%= comment.user.name%>: <%= comment.text%><p>
+    <% end %>
+  </div>
+</div>
