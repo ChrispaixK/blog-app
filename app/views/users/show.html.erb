@@ -6,7 +6,7 @@
     <h4>Bio</h4>
     <p><%= @user.bio %></p>
   </div>
-  <ul class='comment'>
+  <ul class='post'>
     <% @user.most_recent_posts.each do |post| %>
       <a href="/users/<%= @user.id %>/posts/<%= post.id %> ">
         <%=  render 'partials/post', post: post %>
