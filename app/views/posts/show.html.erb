@@ -2,14 +2,20 @@
 <div class="posts">
   <div class="post">
   <div class='specific-post-title'>
-    <h3><%=@posts.title%> | by <%=@posts.user.name%></h3>
-     <p class="stats-comment"> Comments: <%= @posts.comments_counter or 0 %> | Likes: <%= @posts.likes_counter or 0 %> </p>
+    <h3><%=@post.title%> | by <%=@post.user.name%></h3>
+     <p class="stats-comment"> Comments: <%= @post.comments_counter or 0 %> | Likes: <%= @post.likes_counter or 0 %> </p>
      </div>
-    <p>Post : <%= @posts.text%> </p>
+    <p>Post : <%= @post.text%> </p>
   </div>
   <div class="comment">
-    <% @posts.comments.each do |comment| %>
+    <% @post.comments.each do |comment| %>
       <p> <%= comment.user.name%>: <%= comment.text%><p>
     <% end %>
+
+    <%= form_with url: "/users/#{@post.user_id}/posts/#{@post.id}/likes" do |f| %>
+      <%= f.submit "Like" %>
+    <% end %>
+
+    <%= link_to 'Add comment', new_user_post_comment_path(@user, @post) %>
   </div>
 </div>
