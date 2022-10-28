@@ -14,7 +14,7 @@ class PostsController < ApplicationController
     @post = @user.posts.new
     render :new, locals: { post: @post }
   end
-  
+
   def create
     @user = User.find(params[:user_id])
     @post = @user.posts.new(post_params)
@@ -32,12 +32,10 @@ class PostsController < ApplicationController
       end
     end
   end
-  
+
   private
-  
+
   def post_params
     params.require(:new_post).permit(:title, :text)
   end
-  
 end
-
