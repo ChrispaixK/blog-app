@@ -1,11 +1,12 @@
 require 'rails_helper'
 RSpec.describe PostsController, type: :request do
-  describe 'Check post main page' do
+  
     before(:example) do
-      get '/users/1/posts'
-      expect(response).to render_template(:index)
+      @user = User.create(name: 'Chrispaix', id: 1)
+      @post = Post.create(author: @user, title: 'Post Uno', text:'random text post from test')
     end
-
+  describe 'Check post main page' do
+    before(:example) { get user_posts_path(1)}
     it 'Checks if the status response is succes(OK)' do
       expect(response.status).to be(200)
     end
