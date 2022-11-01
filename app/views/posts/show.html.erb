@@ -8,7 +8,7 @@
     <p>Post : <%= @post.text%> </p>
   </div>
   <div class="comment">
-    <% @post.comments.each do |comment| %>
+    <% @post.comments.includes([:user]).each do |comment| %>
       <p> <%= comment.user.name%>: <%= comment.text%><p>
     <% end %>
 
