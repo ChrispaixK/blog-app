@@ -1,9 +1,9 @@
-ENV["RAILS_ENV"] ||= "test"
-require File.expand_path("../../config/environment", __FILE__)
-abort("The Rails environment is running in production mode!") if Rails.env.production?
-require "spec_helper"
-require "rspec/rails"
-require "capybara/rspec"
+ENV['RAILS_ENV'] ||= 'test'
+require File.expand_path('../config/environment', __dir__)
+abort('The Rails environment is running in production mode!') if Rails.env.production?
+require 'spec_helper'
+require 'rspec/rails'
+require 'capybara/rspec'
 # Add additional requires below this line. Rails is not loaded until this point!
 
 # Dir[Rails.root.join("spec/support/**/*.rb")].each { |f| require f }
@@ -16,7 +16,7 @@ end
 
 Capybara.javascript_driver = :selenium_chrome
 
-RSpec.describe "Signing in", js: true do
+RSpec.describe 'Signing in', js: true do
   # tests that actually execute JavaScript
 end
 
@@ -27,7 +27,6 @@ RSpec.configure do |config|
   config.infer_spec_type_from_file_location!
   config.filter_rails_from_backtrace!
 
-
   config.before(:suite) do
     DatabaseCleaner.clean_with(:truncation)
   end
@@ -35,7 +34,7 @@ RSpec.configure do |config|
   config.before(:each) do
     DatabaseCleaner.strategy = :transaction
   end
-  
+
   config.before(:each, js: true) do
     DatabaseCleaner.strategy = :truncation
   end
@@ -49,5 +48,4 @@ RSpec.configure do |config|
   config.after(:each) do
     DatabaseCleaner.clean
   end
-
 end
