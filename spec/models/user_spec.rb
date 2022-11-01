@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe User, type: :model do
   subject do
     User.new(
-      name: 'Chrispaix Kaze', photo: 'https://i.postimg.cc/yx8BkpTj/4.png ',
+      name: 'Chrispaix Kaze', photo: 'https://i.postimg.cc/yx8BkpTj/4.png',
       bio: 'Hey there, I am Chrispaix Kaze software developer.', posts_counter: 0
     )
   end
