@@ -7,15 +7,15 @@ RSpec.describe 'Users and user page contents', type: :feature do
         expect(page).to have_content('Specific post')
     end
 
-#     it 'Check the posts author' do
-#         visit '/users/1/posts/1'
-#         expect(page).to have_content('Abdel')
-#       end
+    it 'Check the posts author' do
+        visit '/users/1/posts/1'
+        expect(page).to have_content('Abdel')
+      end
   
-#       it 'Check the number of comments' do
-#         visit '/users/1/posts/1'
-#         expect(page).to have_content('Comments: 0')
-#       end
+      it 'Check the number of comments' do
+        visit '/users/1/posts/1'
+        expect(page).to have_content('Comments: 0')
+      end
   
 #       it 'Check the number of likes' do
 #         visit '/users/1/posts/1'
