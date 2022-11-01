@@ -2,9 +2,11 @@ require 'rails_helper'
 
 RSpec.describe Comment, type: :model do
   before(:all) do
-    @user = User.create(name: 'Abdel Oumer Ali', photo: 'https://i.postimg.cc/yx8BkpTj/4.png ', bio: 'Tech Enthousiast.',
+    @user = User.create(name: 'Abdel Oumer Ali',
+                        photo: 'https://i.postimg.cc/yx8BkpTj/4.png ', bio: 'Tech Enthousiast.',
                         posts_counter: 0)
-    @post = Post.create(user: @user, title: 'Post title', text: 'This is my first post', likes_counter: 0,
+    @post = Post.create(user: @user, title: 'Post title',
+                        text: 'This is my first post', likes_counter: 0,
                         comments_counter: 0)
   end
 
