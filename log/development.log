@@ -15394,3 +15394,37 @@ Processing by UsersController#index as HTML
 Completed 200 OK in 16ms (Views: 10.7ms | ActiveRecord: 1.0ms | Allocations: 5547)
 
 
+Started GET "/" for ::1 at 2022-10-31 22:20:54 +0200
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:3:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:3
+  Rendered partials/_user.html.erb (Duration: 0.7ms | Allocations: 169)
+  Rendered partials/_user.html.erb (Duration: 0.1ms | Allocations: 16)
+  Rendered partials/_user.html.erb (Duration: 0.1ms | Allocations: 15)
+  Rendered partials/_user.html.erb (Duration: 0.1ms | Allocations: 15)
+  Rendered users/index.html.erb within layouts/application (Duration: 8.4ms | Allocations: 2028)
+  Rendered layout layouts/application.html.erb (Duration: 494.2ms | Allocations: 39117)
+Completed 200 OK in 532ms (Views: 497.4ms | ActiveRecord: 7.3ms | Allocations: 50500)
+
+
+Started GET "/users/8" for ::1 at 2022-10-31 22:20:57 +0200
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:8:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered partials/_user.html.erb (Duration: 0.1ms | Allocations: 16)
+  [1m[36mPost Load (0.7ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1 ORDER BY "posts"."created_at" DESC LIMIT $2[0m  [["user_id", 8], ["LIMIT", 3]]
+  ↳ app/views/users/show.html.erb:10
+  Rendered partials/_post.html.erb (Duration: 216.0ms | Allocations: 191)
+  Rendered users/show.html.erb within layouts/application (Duration: 245.9ms | Allocations: 8246)
+  Rendered layout layouts/application.html.erb (Duration: 250.9ms | Allocations: 10940)
+Completed 200 OK in 257ms (Views: 247.0ms | ActiveRecord: 5.0ms | Allocations: 13351)
+
+

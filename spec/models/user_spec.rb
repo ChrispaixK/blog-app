@@ -3,15 +3,15 @@ require 'rails_helper'
 RSpec.describe User, type: :model do
   subject do
     User.new(
-      name: 'Stephen Seber', photo: 'https://www.pexels.com/photo/grayscale-photo-of-laughing-woman-holding-her-hat-1054251/',
-      bio: 'Hey there, I am Stephen Seber.', posts_counter: 0
+      name: 'Chrispaix Kaze', photo: 'https://i.postimg.cc/yx8BkpTj/4.png ',
+      bio: 'Hey there, I am Chrispaix Kaze software developer.', posts_counter: 0
     )
   end
 
   before { subject.save }
 
   it 'Check if it accept to add a name' do
-    subject.name = 'Stephen Seber'
+    subject.name = 'Chrispaix Kaze'
     expect(subject).to be_valid
   end
 
