@@ -18,6 +18,12 @@
 - Twitter: [@Chrispaix Kaze](https://twitter.com/ChrispaixK)
 - LinkedIn: [Chrispaix Kaze](https://www.linkedin.com/in/chrispaix-kaze-70445a175/)
 
+👤 **Nicholas Emmanuel**
+
+- GitHub: [@NickEmma](https://github.com/NickEmma)
+- Twitter: [@techieEmma](https://twitter.com/techieEmma)
+- LinkedIn: [@Nicholas Emmanuel](https://www.linkedin.com/in/techieemma/)
+
 ## Getting Started
 
 To get a local copy up and running follow these simple example steps.

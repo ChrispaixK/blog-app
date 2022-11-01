@@ -1,9 +1,12 @@
 require 'rails_helper'
 RSpec.describe 'Users', type: :request do
+  before(:example) do
+    @user = User.create(name: 'John Doe', id: 1)
+    @post = Post.create(user: @user, title: 'Post title', text: 'Random text in test')
+  end
+
   describe 'Get and checks User ' do
-    before(:example) do
-      get '/users'
-    end
+    before(:example) { get users_path }
 
     it 'Checks if the status response is succes(OK)' do
       expect(response.status).to be(200)
@@ -29,10 +32,6 @@ RSpec.describe 'Users', type: :request do
 
     it 'Checks if it render the correct template' do
       expect(response).to render_template(:show)
-    end
-
-    it 'Check if it has the correct placeholder text' do
-      expect(response.body).to include('<h2>users display</h2>')
     end
   end
 end
