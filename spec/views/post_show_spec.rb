@@ -17,10 +17,10 @@ RSpec.describe 'Users and user page contents', type: :feature do
         expect(page).to have_content('Comments: 0')
       end
   
-#       it 'Check the number of likes' do
-#         visit '/users/1/posts/1'
-#         expect(page).to have_content('Likes: 0')
-#       end
+      it 'Check the number of likes' do
+        visit '/users/1/posts/1'
+        expect(page).to have_content('Likes: 0')
+      end
 
-#   end
-# end
+  end
+end
