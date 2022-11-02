@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 Rails.application.routes.draw do
   devise_for :users, sign_out_via: %i[get post]
   resources :users, only: %i[index show] do
