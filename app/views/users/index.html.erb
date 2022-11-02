@@ -1,9 +1,18 @@
-<h1>Users</h1>
+<h1>Welcome to the Blog App</h1>
+<a href="/users/sign_out" >Sign out</a>
 <ul class='users-list'>
   <% @users.each do |user| %>
-    <a href='/users/<%= user.id %>'>
-      <%=render 'partials/user', user:user %>
-    </a>
+  <a href='/users/<%= user.id %>'>
+  <div class='user'>
+  <div class='img-container'>
+  <img src=<%user.photo%> />
+  </div>
+  <div class='user-infos'>
+    <h3><%=user.name%></h3>
+    <p>Number of Posts : <%=user.posts_counter or 0%></p>
+  </div>
+ </div>
+ </a>
   <% end %>
 </ul>
 

@@ -1,8 +1,14 @@
-<h2>Post from <%=@user.name%></h2>
-<div>
-  <%= render 'partials/user', user: @user %>
+<h2><%=@user.name%> Posts</h2>
+<div class='user'>
+  <div class='img-container'>
+  <img src=<%@user.photo%> alt="Profile"/>
   </div>
-  <div class='bio'>
+  <div class='user-infos'>
+    <h3><%=@user.name%></h3>
+    <p>Number of Posts : <%=@user.posts_counter or 0%></p>
+  </div>
+</div>
+<div class='bio'>
     <h4>Bio</h4>
     <p><%= @user.bio %></p>
   </div>
@@ -13,4 +19,4 @@
       </a>
     <% end %>
   </ul>
-  <button class='load-btn'> Load More </button>
+</div>

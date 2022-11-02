@@ -1,7 +1,13 @@
 <h1>User Posts page</h1>
-
-<%= render'partials/user', user: @user %>
-
+<div class='user'>
+  <div class='img-container'>
+  <img src=<%@user.photo%> alt="Profile"/>
+  </div>
+  <div class='user-infos'>
+    <h3><%=@user.name%></h3>
+    <p>Number of Posts : <%=@user.posts_counter or 0%></p>
+  </div>
+</div>
   <% @posts.each do |post| %>
   <div class="post">
   <a href="/users/<%= @user.id %>/posts/<%= post.id %>">
