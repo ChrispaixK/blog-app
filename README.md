@@ -10,6 +10,7 @@
 - Rubocop
 - Ruby on Rails
 
+
 ## Authors
 
 👤 **Chrispaix Kaze**
@@ -31,6 +32,9 @@ To get a local copy up and running follow these simple example steps.
 - Clone this repository
 - Change to the project directory by entering : <br>
   `cd blog-app` in the terminal.
+- Run `mailcatcher`
+- open localhost on `http://127.0.0.1:1080`
+  > For development environment purpose this is where you'll get your confirmation mail
 
 ### Setup
 
