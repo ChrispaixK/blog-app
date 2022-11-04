@@ -47,6 +47,6 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:new_post).permit(:title, :text)
+    params.require(:new_post).permit(:title, :text, :likes_counter, :comments_counter)
   end
 end
