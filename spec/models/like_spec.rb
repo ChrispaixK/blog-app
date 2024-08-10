@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 RSpec.describe Like, type: :model do
   before(:all) do
     @user = User.create(name: 'Chrispaix', photo: 'https://i.postimg.cc/yx8BkpTj/4.png ',
